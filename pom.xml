@@ -5,8 +5,8 @@
 	<artifactId>ZooKeeper-Book</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
-    		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  	</properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -19,19 +19,19 @@
 				</configuration>
 			</plugin>
 			<plugin>
-    			<groupId>org.apache.maven.plugins</groupId>
-    			<artifactId>maven-surefire-plugin</artifactId>
-    			<version>2.14</version>
-    			<configuration>
-	    			<redirectTestOutputToFile>true</redirectTestOutputToFile>
-    				<forkCount>1</forkCount>
-        			<reuseForks>false</reuseForks>
-				<systemPropertyVariables>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.14</version>
+				<configuration>
+					<redirectTestOutputToFile>true</redirectTestOutputToFile>
+					<forkCount>1</forkCount>
+					<reuseForks>false</reuseForks>
+					<systemPropertyVariables>
 						<buildTestDir>${java.io.tmpdir}</buildTestDir>
-		        	</systemPropertyVariables>
-        		</configuration>
-      		</plugin>
-		</plugins>		
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 	<dependencies>
 		<dependency>
@@ -46,23 +46,23 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
-        		<artifactId>zookeeper</artifactId>
-        		<version>3.4.8</version>
-        		<exclusions>
-            			<exclusion>
-                			<groupId>com.sun.jmx</groupId>
-                			<artifactId>jmxri</artifactId>
-            			</exclusion>
-            			<exclusion>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.8</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+				<exclusion>
 					<groupId>com.sun.jdmk</groupId>
-                			<artifactId>jmxtools</artifactId>
-            			</exclusion>
-            			<exclusion>
-                			<groupId>javax.jms</groupId>
-                			<artifactId>jms</artifactId>
-            			</exclusion>
-        		</exclusions>
-        	</dependency>	
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.curator</groupId>
 			<artifactId>curator-recipes</artifactId>
