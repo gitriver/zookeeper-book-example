@@ -324,7 +324,7 @@ public class Worker implements Watcher, Closeable {
         public void processResult(int rc, String path, Object ctx, byte[] data, Stat stat) {
             switch (Code.get(rc)) {
             case CONNECTIONLOSS:
-                zk.getData(path, false, taskDataCallback, null);
+                zk.getData(path, false, taskDataCallback, ctx);
                 break;
             case OK:
                 /*
@@ -420,7 +420,7 @@ public class Worker implements Watcher, Closeable {
      * @throws Exception
      */
     public static void main(String args[]) throws Exception {
-        Worker w = new Worker(args[0]);
+        Worker w = new Worker("localhost:2181");
         w.startZK();
 
         while (!w.isConnected()) {

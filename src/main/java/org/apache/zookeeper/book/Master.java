@@ -582,6 +582,7 @@ public class Master implements Watcher, Closeable {
 
                 break;
             case NODEEXISTS:
+                //TODO 节点已经存在，应该不做处理
                 LOG.info("Node exists already, but if it hasn't been deleted, "
                         + "then it will eventually, so we keep trying: " + path);
                 recreateTask((RecreateTaskCtx) ctx);
@@ -793,7 +794,7 @@ public class Master implements Watcher, Closeable {
      * @throws Exception
      */
     public static void main(String args[]) throws Exception {
-        Master m = new Master(args[0]);
+        Master m = new Master("localhost:2181");
         m.startZK();
 
         while (!m.isConnected()) {

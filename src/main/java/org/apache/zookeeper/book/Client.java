@@ -303,7 +303,7 @@ public class Client implements Watcher, Closeable {
 
 
     public static void main(String args[]) throws Exception {
-        Client c = new Client(args[0]);
+        Client c = new Client("localhost:2181");
         c.startZK();
 
         while (!c.isConnected()) {
